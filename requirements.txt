@@ -9,3 +9,5 @@ joblib
 openpyxl
 librosa
 soundfile
+opencv-python
+jupyter
