@@ -7,3 +7,5 @@ seaborn
 scipy
 joblib
 openpyxl
+librosa
+soundfile
