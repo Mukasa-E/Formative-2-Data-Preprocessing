@@ -99,9 +99,13 @@ def _save_visualization(audio: np.ndarray, sample_rate: int, path: Path, title: 
 
 
 def process_audio(input_dir: Path, output_dir: Path) -> pd.DataFrame:
-    recordings = sorted(input_dir.rglob("*.wav"))
+    recordings = sorted(
+        path
+        for extension in ("*.wav", "*.ogg")
+        for path in input_dir.rglob(extension)
+    )
     if not recordings:
-        raise FileNotFoundError(f"No .wav recordings found under {input_dir}")
+        raise FileNotFoundError(f"No WAV or OGG recordings found under {input_dir}")
 
     rows: list[dict[str, object]] = []
     for recording in recordings:

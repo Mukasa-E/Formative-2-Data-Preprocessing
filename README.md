@@ -2,9 +2,9 @@
 
 ## Audio preprocessing
 
-Place the two WAV recordings for each team member in a member-specific folder.
+Place the two WAV or OGG recordings for each team member in a member-specific folder.
 Use descriptive filenames such as `yes_approve.wav` and
-`confirm_transaction.wav`:
+`confirm_transaction.wav` (OGG files are also supported):
 
 ```text
 data/audio/raw/
@@ -19,7 +19,7 @@ Run the audio pipeline from the repository root:
 python audio_preprocessing.py
 ```
 
-The script processes every `.wav` file recursively. For each recording, it
+The script processes every `.wav` and `.ogg` file recursively. For each recording, it
 creates pitch-shifted, time-stretched, and background-noise augmented versions,
 plots the original waveform and spectrogram, and extracts MFCC means and
 standard deviations plus spectral roll-off, RMS energy, spectral centroid, and
